@@ -1,0 +1,53 @@
+!(function (t) {
+    "use strict";
+    t(".header-slider").slick({ autoplay: !0, dots: !0, infinite: !0, slidesToShow: 1, slidesToScroll: 1 }),
+    t(".product-slider-4").slick({
+        autoplay: !0,
+        infinite: !0,
+        dots: !1,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+            { breakpoint: 1200, settings: { slidesToShow: 4 } },
+            { breakpoint: 992, settings: { slidesToShow: 3 } },
+            { breakpoint: 768, settings: { slidesToShow: 2 } },
+            { breakpoint: 576, settings: { slidesToShow: 1 } },
+        ],
+    }),
+    t(".product-slider-3").slick({
+        autoplay: !0,
+        infinite: !0,
+        dots: !1,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+            { breakpoint: 992, settings: { slidesToShow: 3 } },
+            { breakpoint: 768, settings: { slidesToShow: 2 } },
+            { breakpoint: 576, settings: { slidesToShow: 1 } },
+        ],
+    }),
+    t(".product-slider-single").slick({ infinite: !0, autoplay: !0, dots: !1, fade: !0, slidesToShow: 1, slidesToScroll: 1, asNavFor: ".product-slider-single-nav" }),
+    t(".product-slider-single-nav").slick({ slidesToShow: 3, slidesToScroll: 1, dots: !1, centerMode: !0, focusOnSelect: !0, asNavFor: ".product-slider-single" }),
+    t(".brand-slider").slick({
+        speed: 5e3,
+        autoplay: !0,
+        autoplaySpeed: 0,
+        cssEase: "linear",
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        infinite: !0,
+        swipeToSlide: !0,
+        centerMode: !0,
+        focusOnSelect: !1,
+        arrows: !1,
+        dots: !1,
+        responsive: [
+            { breakpoint: 992, settings: { slidesToShow: 4 } },
+            { breakpoint: 768, settings: { slidesToShow: 3 } },
+            { breakpoint: 576, settings: { slidesToShow: 2 } },
+            { breakpoint: 300, settings: { slidesToShow: 1 } },
+        ],
+    }),
+    t(".review-slider").slick({ autoplay: !0, dots: !1, infinite: !0, slidesToShow: 2, slidesToScroll: 1, responsive: [{ breakpoint: 768, settings: { slidesToShow: 1 } }] }),
+    t(".sidebar-slider").slick({ autoplay: !0, dots: !1, infinite: !0, slidesToShow: 1, slidesToScroll: 1 }),
+})(jQuery);

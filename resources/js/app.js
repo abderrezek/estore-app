@@ -1,1 +1,1 @@
-require('./bootstrap');
+// require('./turbolinks.js');

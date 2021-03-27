@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', fn () => view('home'))->name('home');
+
+require __DIR__ . '/socialite.php';
+
+require __DIR__ . '/admin.php';
+
+Route::fallback(fn () => view('404'));
