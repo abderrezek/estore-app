@@ -125,26 +125,25 @@
     <!-- Bottom Bar End -->
 
       {{-- Start Mail Notification bar --}}
-  {{-- @if (!is_null(auth()->user()))
-      @if (!auth()->user()->hasVerifiedEmail())
-          <div class="alert alert-warning" role="alert" style="margin-top: -15px;">
-              Email not Verified <a id="email-sender" class="alert-link" href="{{ route('verification.send') }}">click here to resend</a>
-          </div>
-          <form id="email-form" action="{{ route('verification.send') }}" method="post" style="display: none;">
-              @csrf
-          </form>
+      @if (auth()->user() && !auth()->user()->hasVerifiedEmail())
+        <div class="alert alert-warning" role="alert" style="margin-top: -15px;">
+          Email not Verified <a id="email-sender" class="alert-link" href="{{ route('verification.send') }}">click here to resend</a>
+        </div>
+        <form id="email-form" action="{{ route('verification.send') }}" method="post" style="display: none;">
+          @csrf
+          @method('POST')
+        </form>
       @endif
-  @endif --}}
       {{-- End Mail Notification bar --}}
       {{-- Start Mail Notification Send succefull --}}
-      {{-- @if (session('status') == 'verification-link-sent')
-          <div class="alert alert-info mt-2 alert-dismissible fade show" role="alert">
-              A new email verification link has been emailed to you!
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-              </button>
-          </div>
-      @endif --}}
+      @if (session('status') == 'verification-link-sent')
+        <div class="alert alert-info mt-2 alert-dismissible fade show" role="alert">
+          A new email verification link has been emailed to you!
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      @endif
       {{-- End Mail Notification Send succefull --}}
 
     <!-- Breadcrumb Start -->
